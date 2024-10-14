@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhuf308f7ax6g"]
+[gd_scene load_steps=6 format=3 uid="uid://dhuf308f7ax6g"]
 
 [ext_resource type="Script" path="res://for player/gdscript/gdscript for player/player.gd" id="1_hhr5w"]
 [ext_resource type="PackedScene" uid="uid://dhumoogsgrnff" path="res://just to test/gpu_particles_3d.tscn" id="2_yois6"]
@@ -16,9 +16,6 @@ grow_amount = 1.055
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bppt6"]
 material = SubResource("StandardMaterial3D_qxi1f")
-
-[sub_resource type="BoxMesh" id="BoxMesh_oym3j"]
-size = Vector3(0.5, 0.5, 0.5)
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_hhr5w")
@@ -51,8 +48,5 @@ light_volumetric_fog_energy = 3.0
 light_size = 0.2
 light_specular = 0.2
 omni_attenuation = 4.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="head/movelikesholder/Camera3D/OmniLight3D"]
-mesh = SubResource("BoxMesh_oym3j")
 
 [node name="fire_candle" parent="head/movelikesholder/Camera3D/OmniLight3D" instance=ExtResource("2_yois6")]

@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		movelikesholder.rotate_y(-event.relative.x * speed_of_look)
 		eyes.rotate_x(-event.relative.y * speed_of_look)
-		eyes.rotation.x = clamp(eyes.rotation.x, deg_to_rad(-85), deg_to_rad(100))
+		eyes.rotation.x = clamp(eyes.rotation.x, deg_to_rad(-45), deg_to_rad(100))
 
 
 func _physics_process(delta: float) -> void:
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("run"):
 		if is_runing:
-			speed = 70.0
+			speed = 7.0
 			is_runing  = false
 			print("sspeed iss 70")
 		else:
@@ -60,5 +60,5 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	movelikesholder.global_position = head.global_position
-	head.global_rotation = movelikesholder.global_rotation
+	movelikesholder.global_position = lerp(movelikesholder.global_position, head.global_position, 0.25)
+	head.global_rotation = lerp(head.global_rotation,movelikesholder.global_rotation, 0.07)

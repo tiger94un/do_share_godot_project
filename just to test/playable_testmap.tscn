@@ -11,10 +11,11 @@ albedo_texture = ExtResource("1_ql4lv")
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cg83j"]
 sky_top_color = Color(0.358258, 0.420836, 0.729533, 1)
 sky_horizon_color = Color(0.599412, 0.669729, 0.690697, 1)
-sky_curve = 0.053033
+sky_curve = 0.0803831
 ground_bottom_color = Color(0.37, 0.33115, 0.2146, 1)
 ground_horizon_color = Color(0.636181, 0.48594, 0.766757, 1)
 ground_curve = 0.0168179
+energy_multiplier = 0.05
 
 [sub_resource type="Sky" id="Sky_3k4kr"]
 sky_material = SubResource("ProceduralSkyMaterial_cg83j")
@@ -22,7 +23,6 @@ sky_material = SubResource("ProceduralSkyMaterial_cg83j")
 [sub_resource type="Environment" id="Environment_6mms4"]
 background_mode = 2
 sky = SubResource("Sky_3k4kr")
-tonemap_mode = 2
 glow_enabled = true
 
 [node name="playable_testmap" type="Node3D"]
@@ -48,6 +48,7 @@ environment = SubResource("Environment_6mms4")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="sky_and_light"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+sky_mode = 2
 
 [node name="for_player" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 53.8072, 0)

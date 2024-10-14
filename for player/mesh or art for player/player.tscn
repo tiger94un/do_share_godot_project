@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhuf308f7ax6g"]
+[gd_scene load_steps=5 format=3 uid="uid://dhuf308f7ax6g"]
 
 [ext_resource type="Script" path="res://for player/gdscript/gdscript for player/player.gd" id="1_hhr5w"]
-[ext_resource type="PackedScene" uid="uid://dhumoogsgrnff" path="res://just to test/gpu_particles_3d.tscn" id="2_wb8vi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rlb1u"]
 
@@ -34,6 +33,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06245, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="GPUParticles3D" parent="." instance=ExtResource("2_wb8vi")]
-transform = Transform3D(0.252644, 0, 0, 0, 0.252644, 0, 0, 0, 0.252644, 0, 0, 2.8438)
-lifetime = 1.6
+[node name="OmniLight3D" type="OmniLight3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468982, -0.304141, -1.19391)
+light_energy = 7.0
+light_indirect_energy = 7.0
+light_volumetric_fog_energy = 7.0
+light_size = 0.4
+omni_range = 17.046
+omni_attenuation = 3.095

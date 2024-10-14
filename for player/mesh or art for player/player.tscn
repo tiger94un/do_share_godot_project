@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhuf308f7ax6g"]
+
+[ext_resource type="Script" path="res://for player/gdscript/gdscript for player/player.gd" id="1_hhr5w"]
+[ext_resource type="PackedScene" uid="uid://dhumoogsgrnff" path="res://just to test/gpu_particles_3d.tscn" id="2_wb8vi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rlb1u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxi1f"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+roughness = 0.1
+emission = Color(1, 0.11, 0.11, 1)
+normal_scale = 16.0
+grow_amount = 1.055
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bppt6"]
+material = SubResource("StandardMaterial3D_qxi1f")
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_hhr5w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_rlb1u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_bppt6")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06245, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("2_wb8vi")]
+transform = Transform3D(0.252644, 0, 0, 0, 0.252644, 0, 0, 0, 0.252644, 0, 0, 2.8438)
+lifetime = 1.6

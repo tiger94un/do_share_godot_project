@@ -2,3 +2,4 @@
 
 [resource]
 text = "hello world"
+font_size = 20

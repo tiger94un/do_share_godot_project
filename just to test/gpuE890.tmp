@@ -41,8 +41,8 @@ material = SubResource("StandardMaterial3D_rdyn4")
 size = Vector3(0.05, 0.05, 0.05)
 
 [sub_resource type="TextMesh" id="TextMesh_gsfmi"]
-text = "jusst try to fix it"
-font_size = 10
+text = "hello world "
+font_size = 40
 pixel_size = 0.05
 
 [node name="fire_candle" type="GPUParticles3D"]

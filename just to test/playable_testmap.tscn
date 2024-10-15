@@ -1,21 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://kn4xhq13rxy1"]
 
-[ext_resource type="Texture2D" uid="uid://cnxkw8cmx82a2" path="res://icon.svg" id="1_ql4lv"]
+[ext_resource type="PackedScene" uid="uid://btvcj25i2g0lc" path="res://just to test/simple_map_for_moster.tscn" id="1_nv56r"]
 [ext_resource type="PackedScene" uid="uid://dhuf308f7ax6g" path="res://for player/mesh or art for player/player.tscn" id="2_ndyp0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_778pi"]
-transparency = 1
-albedo_color = Color(1, 0.841667, 0.5, 1)
-albedo_texture = ExtResource("1_ql4lv")
+[ext_resource type="PackedScene" uid="uid://do0cp8rvixods" path="res://just to test/rode_for__moster.tscn" id="3_yqe44"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cg83j"]
 sky_top_color = Color(0.358258, 0.420836, 0.729533, 1)
 sky_horizon_color = Color(0.599412, 0.669729, 0.690697, 1)
-sky_curve = 0.0803831
 ground_bottom_color = Color(0.37, 0.33115, 0.2146, 1)
 ground_horizon_color = Color(0.636181, 0.48594, 0.766757, 1)
-ground_curve = 0.0168179
-energy_multiplier = 0.05
+sun_angle_max = 80.65
 
 [sub_resource type="Sky" id="Sky_3k4kr"]
 sky_material = SubResource("ProceduralSkyMaterial_cg83j")
@@ -34,16 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 74.7072, -384.816)
 pixel_size = 1.0
 text = "hello friend to godot project"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="simple_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56688, -16.5286, -213.469)
-use_collision = true
-size = Vector3(652.585, 25.7548, 498.157)
-material = SubResource("StandardMaterial3D_778pi")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="simple_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.49201, -5.5)
-use_collision = true
-size = Vector3(83, 5, 4)
+[node name="simple_map_for_moster" parent="simple_platform" instance=ExtResource("1_nv56r")]
 
 [node name="sky_and_light" type="Node3D" parent="."]
 
@@ -51,11 +36,15 @@ size = Vector3(83, 5, 4)
 environment = SubResource("Environment_6mms4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="sky_and_light"]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 sky_mode = 2
 
 [node name="for_player" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.37141, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.664, 0)
 
 [node name="player" parent="for_player" instance=ExtResource("2_ndyp0")]
+
+[node name="monster_here" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0204, -41.4558)
+
+[node name="rode for  moster" parent="monster_here" instance=ExtResource("3_yqe44")]

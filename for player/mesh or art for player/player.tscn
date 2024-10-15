@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhuf308f7ax6g"]
+[gd_scene load_steps=10 format=3 uid="uid://dhuf308f7ax6g"]
 
 [ext_resource type="Script" path="res://for player/gdscript/gdscript for player/player.gd" id="1_hhr5w"]
 [ext_resource type="PackedScene" uid="uid://dhumoogsgrnff" path="res://just to test/gpu_particles_3d.tscn" id="2_yois6"]
+[ext_resource type="Animation" uid="uid://ch1mjj4daenmk" path="res://for player/for_animation/forwalk.res" id="3_ji6xl"]
+[ext_resource type="Animation" uid="uid://d1dok485vi26m" path="res://for player/for_animation/for_run.res" id="4_8sttl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rlb1u"]
 
@@ -16,6 +18,28 @@ grow_amount = 1.055
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bppt6"]
 material = SubResource("StandardMaterial3D_qxi1f")
+
+[sub_resource type="Animation" id="Animation_obmhv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f4cn4"]
+_data = {
+"RESET": SubResource("Animation_obmhv"),
+"for_run": ExtResource("4_8sttl"),
+"forwalk": ExtResource("3_ji6xl")
+}
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_hhr5w")
@@ -50,3 +74,12 @@ light_specular = 0.2
 omni_attenuation = 4.0
 
 [node name="fire_candle" parent="head/movelikesholder/Camera3D/OmniLight3D" instance=ExtResource("2_yois6")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f4cn4")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

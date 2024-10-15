@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://do0cp8rvixods"]
+
+[ext_resource type="Script" path="res://for player/gdscript/rode_for__moster.gd" id="1_itei6"]
+[ext_resource type="PackedScene" uid="uid://00dstjvy41ka" path="res://just to test/moster.tscn" id="2_og26n"]
+
+[sub_resource type="Curve3D" id="Curve3D_07p06"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 84.595, 0, 0, 0, 0, 0, 10, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="rode for  moster" type="Path3D"]
+curve = SubResource("Curve3D_07p06")
+script = ExtResource("1_itei6")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="moster" parent="PathFollow3D" instance=ExtResource("2_og26n")]

@@ -3,12 +3,15 @@ extends CharacterBody3D
 
 @onready var head: Node3D = $head
 
+@onready var player_sound: AnimationPlayer = $AnimationPlayer
+
 @onready var eyes: Camera3D = $head/movelikesholder/Camera3D
 
 @onready var movelikesholder: Node3D = $head/movelikesholder
 
 var speed_of_look := 0.03
 
+var for_is_animationPlaying :bool = true
 
 var speed = 5.0
 
@@ -40,18 +43,26 @@ func _physics_process(delta: float) -> void:
 		if is_runing:
 			speed = 7.0
 			is_runing  = false
-			print("sspeed iss 70")
+			for_is_animationPlaying = false
 		else:
 			speed = 5.0
 			is_runing = true
-			print("speed iss 5")
+			for_is_animationPlaying = true
 
 
+
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		if !is_runing:
+			is_runing = true
+			player_sound.play("for_run")
+		if for_is_animationPlaying:
+			for_is_animationPlaying = false
+			player_sound.play("forwalk")
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
@@ -62,3 +73,8 @@ func _physics_process(delta: float) -> void:
 
 	movelikesholder.global_position = lerp(movelikesholder.global_position, head.global_position, 0.25)
 	head.global_rotation = lerp(head.global_rotation,movelikesholder.global_rotation, 0.07)
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	for_is_animationPlaying = true
+	is_runing =  true

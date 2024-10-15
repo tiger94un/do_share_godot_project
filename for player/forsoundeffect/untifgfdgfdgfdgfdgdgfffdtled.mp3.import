@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8cej50l65jeu"
+path="res://.godot/imported/untifgfdgfdgfdgfdgdgfffdtled.mp3-033e1b20d50c172aed31affddf6dc008.mp3str"
+
+[deps]
+
+source_file="res://for player/forsoundeffect/untifgfdgfdgfdgfdgdgfffdtled.mp3"
+dest_files=["res://.godot/imported/untifgfdgfdgfdgfdgdgfffdtled.mp3-033e1b20d50c172aed31affddf6dc008.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

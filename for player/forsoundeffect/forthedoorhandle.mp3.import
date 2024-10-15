@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmuanoyrid1y7"
+path="res://.godot/imported/forthedoorhandle.mp3-9e900515be13bcfa8b16480b92ab0636.mp3str"
+
+[deps]
+
+source_file="res://for player/forsoundeffect/forthedoorhandle.mp3"
+dest_files=["res://.godot/imported/forthedoorhandle.mp3-9e900515be13bcfa8b16480b92ab0636.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1jjirhkfammb"
+path="res://.godot/imported/woodcraacking.mp3-1caa7adfab0e25162910e40af51c30e2.mp3str"
+
+[deps]
+
+source_file="res://for player/forsoundeffect/woodcraacking.mp3"
+dest_files=["res://.godot/imported/woodcraacking.mp3-1caa7adfab0e25162910e40af51c30e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

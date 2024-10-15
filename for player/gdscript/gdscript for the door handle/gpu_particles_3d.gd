@@ -8,7 +8,7 @@ extends GPUParticles3D
 
 @onready var just_3d : Label3D = $Label3D
 
-var just_reblaceit : TextMesh
+var NEW_TEXT_MESH = preload("res://for player/gdscript/gdscript for the door handle/new_text_mesh.tres")
 var the_mount_of_time_in_candle: float  
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +22,8 @@ func _process(_delta: float) -> void:
 func make_lable_text_changes():
 	textforfule.text =  str(ceil(fule.time_left))
 	just_3d.text = textforfule.text
-	
+	mesh_instance.mesh = NEW_TEXT_MESH
+	NEW_TEXT_MESH.text = str(ceil(fule.time_left))
 
 	
 

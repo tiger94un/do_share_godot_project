@@ -1,0 +1,4 @@
+[gd_resource type="TextMesh" format=3 uid="uid://dkmuowhseulqs"]
+
+[resource]
+text = "hello world"

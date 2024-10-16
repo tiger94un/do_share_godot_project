@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://00dstjvy41ka"]
+[gd_scene load_steps=4 format=3 uid="uid://00dstjvy41ka"]
+
+[ext_resource type="Script" path="res://for player/gdscript/gdscript  for monster/moster.gd" id="1_p05q5"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_3p0p8"]
 radius = 1.413
 height = 2.37
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_147ba"]
+size = Vector3(3.31152, 2.59058, 3.14618)
+
 [node name="moster" type="Node3D"]
+script = ExtResource("1_p05q5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_3p0p8")
@@ -17,3 +23,11 @@ light_indirect_energy = 4.41
 light_volumetric_fog_energy = 4.318
 spot_range = 48.1038
 spot_angle = 16.4194
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0805664, 0.125122, 0.0532532)
+shape = SubResource("BoxShape3D_147ba")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

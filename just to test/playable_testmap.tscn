@@ -45,6 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.664, 0)
 [node name="player" parent="for_player" instance=ExtResource("2_ndyp0")]
 
 [node name="monster_here" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0204, -41.4558)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 7.0204, -41.4558)
 
 [node name="rode for  moster" parent="monster_here" instance=ExtResource("3_yqe44")]

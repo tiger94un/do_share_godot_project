@@ -62,6 +62,7 @@ top_level = true
 
 [node name="Camera3D" type="Camera3D" parent="head/movelikesholder"]
 doppler_tracking = 1
+fov = 37.8493
 
 [node name="OmniLight3D" type="OmniLight3D" parent="head/movelikesholder/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468982, -0.304141, -1.13672)

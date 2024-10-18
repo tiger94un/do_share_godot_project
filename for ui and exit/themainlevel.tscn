@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7w30223e01d0"]
+
+[ext_resource type="PackedScene" uid="uid://btvcj25i2g0lc" path="res://just to test/simple_map_for_moster.tscn" id="1_2cq53"]
+[ext_resource type="PackedScene" uid="uid://do0cp8rvixods" path="res://just to test/rode_for__moster.tscn" id="2_akq8f"]
+[ext_resource type="PackedScene" uid="uid://dhuf308f7ax6g" path="res://for player/mesh or art for player/player.tscn" id="3_r2y2g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kwmm0"]
+size = Vector3(122.611, 1.44263, 120.99)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5aygj"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_pxtnh"]
+sky_material = SubResource("ProceduralSkyMaterial_5aygj")
+
+[sub_resource type="Environment" id="Environment_04tcj"]
+background_mode = 2
+sky = SubResource("Sky_pxtnh")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="themainlevel" type="Node3D"]
+
+[node name="simple_map_for_moster" parent="." instance=ExtResource("1_2cq53")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2075, -2.1109, 0)
+
+[node name="rode for  moster" parent="." instance=ExtResource("2_akq8f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2075, 0.698766, 0)
+
+[node name="player" parent="." instance=ExtResource("3_r2y2g")]
+
+[node name="collition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2075, -2.51329, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="collition"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collition/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773438, 0.221313, 45.3558)
+shape = SubResource("BoxShape3D_kwmm0")
+
+[node name="skay" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="skay"]
+environment = SubResource("Environment_04tcj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="skay"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true

@@ -32,13 +32,12 @@ color = Color(1, 1, 1, 0)
 color_ramp = SubResource("GradientTexture1D_g8rye")
 emission_curve = SubResource("CurveTexture_td1uj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdyn4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm5rt"]
 vertex_color_use_as_albedo = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_wmts7"]
-lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_rdyn4")
-size = Vector3(0.05, 0.05, 0.05)
+[sub_resource type="PlaneMesh" id="PlaneMesh_pxteo"]
+material = SubResource("StandardMaterial3D_rm5rt")
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="TextMesh" id="TextMesh_gsfmi"]
 text = "jusst try to fix it"
@@ -49,7 +48,7 @@ pixel_size = 0.05
 transform = Transform3D(0.0652215, 0, 0, 0, 0.0652215, 0, 0, 0, 0.0652215, 0, 0, 0)
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_gix52")
-draw_pass_1 = SubResource("BoxMesh_wmts7")
+draw_pass_1 = SubResource("PlaneMesh_pxteo")
 script = ExtResource("1_a0s42")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
@@ -61,7 +60,7 @@ autoplay = true
 wait_time = 50.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -3.80827, 2.93533)
 mesh = SubResource("TextMesh_gsfmi")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

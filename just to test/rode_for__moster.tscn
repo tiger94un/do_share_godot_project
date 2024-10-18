@@ -5,12 +5,13 @@
 
 [sub_resource type="Curve3D" id="Curve3D_07p06"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 84.595, 0, 0, 0, 0, 0, 10, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [node name="rode for  moster" type="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 curve = SubResource("Curve3D_07p06")
 script = ExtResource("1_itei6")
 
@@ -18,3 +19,4 @@ script = ExtResource("1_itei6")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="moster" parent="PathFollow3D" instance=ExtResource("2_og26n")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

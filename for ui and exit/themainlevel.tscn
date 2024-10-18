@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7w30223e01d0"]
+[gd_scene load_steps=9 format=3 uid="uid://b7w30223e01d0"]
 
 [ext_resource type="PackedScene" uid="uid://btvcj25i2g0lc" path="res://just to test/simple_map_for_moster.tscn" id="1_2cq53"]
 [ext_resource type="PackedScene" uid="uid://do0cp8rvixods" path="res://just to test/rode_for__moster.tscn" id="2_akq8f"]
 [ext_resource type="PackedScene" uid="uid://dhuf308f7ax6g" path="res://for player/mesh or art for player/player.tscn" id="3_r2y2g"]
+[ext_resource type="PackedScene" uid="uid://bx2dmnboonl6q" path="res://for ui and exit/willdone.tscn" id="4_4t1ry"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwmm0"]
 size = Vector3(122.611, 1.44263, 120.99)
@@ -47,3 +48,6 @@ environment = SubResource("Environment_04tcj")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="skay"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+
+[node name="willdone" parent="." instance=ExtResource("4_4t1ry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.24, 0.736157, 19.0841)
